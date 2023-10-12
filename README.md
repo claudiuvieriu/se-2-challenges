@@ -1,4 +1,4 @@
-# 🚩 Challenge 2: 🏵 Token Vendor 🤖
+# 🚩 Challenge 2: 🏵 Token Vendor
 
 ![readme-2](https://github.com/scaffold-eth/se-2-challenges/assets/55535804/b427171f-3f20-41a5-b76f-05d67e2b9959)
 
